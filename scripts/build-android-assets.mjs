@@ -6,6 +6,10 @@ const dest = path.join(root, 'android/app/src/main/assets');
 await mkdir(path.join(dest, 'assets'), { recursive: true });
 for (const name of ['aplikasi.html','style.css','auth.css','app.js','auth.js','domain.js']) {
   let text = await readFile(path.join(root,name),'utf8');
+  // Logical nullish assignment landed after the WebView shipped with Android 11.
+  // Keep the equivalent assignments readable in the offline bundle.
+  if (name === 'app.js') text = text.replaceAll('map[i.productId]??=', 'map[i.productId]=map[i.productId]??');
+  if (name === 'domain.js') text = text.replaceAll('s.payments??=[]', 's.payments=s.payments??[]');
   if (name.endsWith('.css')) text = text.replace(/@import\s+url\([^;]+;/g,'');
   if (name === 'aplikasi.html') text = text.replaceAll('href="index.html#kontak"','href="https://aplikasi-vas.vercel.app/#kontak"').replace('</head>','<script src="android-compat.js"></script></head>');
   if (name === 'auth.js') text = text.replaceAll('href="index.html"','href="https://aplikasi-vas.vercel.app/"');
