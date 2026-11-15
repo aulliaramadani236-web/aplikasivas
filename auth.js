@@ -95,7 +95,7 @@ export function showAuth({tab = 'login', onSuccess, onDemo, message = ''}) {
   root.innerHTML = `
     <div class="auth-shell">
       <section class="auth-story" aria-label="Tentang VAS">
-        <a class="brand auth-brand" href="#masuk" aria-label="VAS"><span class="logo-crop"><img src="assets/logo-vas.jpg" alt="Logo VAS" width="878" height="559"></span><span>vas<small>Virtual Administration Service</small></span></a>
+        <a class="brand auth-brand" href="index.html" aria-label="Kembali ke profil VAS"><span class="logo-crop"><img src="assets/logo-vas.jpg" alt="Logo VAS" width="878" height="559"></span><span>vas<small>Virtual Administration Service</small></span></a>
         <div class="auth-story-content">
           <span class="auth-pill"><span></span> TEMAN TUMBUH USAHA ANDA</span>
           <h1>Urus usaha lebih rapi.<br><em>Wujudkan langkah<br> yang lebih besar.</em></h1>

@@ -4,3 +4,5 @@
 .legacy-notice{display:flex;align-items:center;justify-content:space-between;gap:12px}.legacy-notice button{font-size:11px;white-space:nowrap}@media(max-width:600px){.legacy-notice{align-items:flex-start;flex-direction:column}}
 .auth-field{display:grid;gap:8px}
 aside{overflow-y:auto;overscroll-behavior:contain}aside>.brand,aside>.workspace,aside>nav,aside>.nav-label,aside>.sidebar-bottom{flex-shrink:0}
+
+.vas-contact-link{display:block;color:inherit;font-size:12px;font-weight:700;margin-bottom:14px;text-decoration:underline;text-underline-offset:3px}

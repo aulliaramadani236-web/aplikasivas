@@ -52,3 +52,9 @@ Keluar akun melalui tombol di sidebar. Akun berbeda memiliki ruang data tersendi
 ## Menjalankan dan menguji
 
 Memerlukan Node.js 20+. Jalankan `npm.cmd install`, kemudian `npm.cmd start` dan buka http://127.0.0.1:3001. `npm.cmd test` menguji logika akun dan domain usaha; `npm.cmd run test:e2e` menguji alur browser. Pengujian browser memakai Chrome Windows; atur `CHROME_PATH` jika lokasi berbeda. GitHub Pages melayani aplikasi langsung tanpa Node atau build.
+
+## Halaman profil VAS
+
+`index.html` adalah halaman profil publik VAS dengan navigasi, pengenalan, layanan, cara kerja, FAQ, dan footer. Tombol Masuk Aplikasi membuka `aplikasi.html`, tempat aplikasi dan akun lokal yang sudah ada tetap tersedia. Logo di halaman masuk mengarah kembali ke profil. Tampilan profil memakai `profile.css` dan `profile.js`; foto banner disimpan lokal di `assets/vas-coffee.jpg` (Unsplash). Font Google opsional dengan fallback font sistem.
+
+Contact Us tersedia di `index.html#kontak` dengan email rmnaulliya@gmail.com melalui tautan mailto. Sidebar aplikasi juga menyediakan tautan ke Contact Us. Tautan fitur dari profil mempertahankan tujuan setelah login atau mencoba demo.
