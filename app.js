@@ -1,6 +1,6 @@
 import {currentUser,showAuth,logout,legacyBusinessFor} from './auth.js';
 import {today,uid,empty,demo,available,reserved,total,sale,order,changeStatus,refund,summary,cashSummary,payOrder} from './domain.js';
-const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),money=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n),date=v=>new Date(v+'T12:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
+const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),money=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',minimumFractionDigits:0,maximumFractionDigits:0}).format(n),date=v=>new Date(v+'T12:00:00').toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
 let user=currentUser(),guest=sessionStorage.getItem('vas-guest')==='true';
 let mode=user?(localStorage.getItem('vas-mode-'+user.id)||'live'):'demo',state,storageError=false;
 const storageKey=()=>user?'vas-v2-'+user.id+'-'+mode:'vas-v1-demo';
