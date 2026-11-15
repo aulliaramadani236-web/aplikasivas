@@ -58,3 +58,11 @@ Memerlukan Node.js 20+. Jalankan `npm.cmd install`, kemudian `npm.cmd start` dan
 `index.html` adalah halaman profil publik VAS dengan navigasi, pengenalan, layanan, cara kerja, FAQ, dan footer. Tombol Masuk Aplikasi membuka `aplikasi.html`, tempat aplikasi dan akun lokal yang sudah ada tetap tersedia. Logo di halaman masuk mengarah kembali ke profil. Tampilan profil memakai `profile.css` dan `profile.js`; foto banner disimpan lokal di `assets/vas-coffee.jpg` (Unsplash). Font Google opsional dengan fallback font sistem.
 
 Contact Us tersedia di `index.html#kontak` dengan email rmnaulliya@gmail.com melalui tautan mailto. Sidebar aplikasi juga menyediakan tautan ke Contact Us. Tautan fitur dari profil mempertahankan tujuan setelah login atau mencoba demo.
+
+## Deployment Vercel
+
+Proyek siap diimpor dari repository GitHub ke Vercel dengan root directory repository (`./`). `vercel.json` memilih framework Other, melewati instalasi dependensi, menjalankan `node scripts/build-static.mjs`, dan menerbitkan folder `dist`. Build hanya menyalin HTML, CSS, JavaScript aplikasi, dan aset publik.
+
+Website profil berada di `/`, aplikasi di `/aplikasi.html`, dan Contact Us di `/#kontak`. Tautan antarhalaman menggunakan jalur relatif. Folder `.vercel/` dan `dist/` diabaikan oleh Git.
+
+Hosting Vercel belum aktif sampai proyek di-deploy melalui akun Vercel. Akun dan catatan lokal pada domain GitHub Pages tidak otomatis terbawa ke domain baru; unduh cadangan pada domain lama terlebih dahulu.
