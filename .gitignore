@@ -5,3 +5,5 @@ preview-*.png
 .env*
 dist/
 .vercel/
+
+.vercel

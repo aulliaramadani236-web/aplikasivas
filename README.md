@@ -65,4 +65,4 @@ Proyek siap diimpor dari repository GitHub ke Vercel dengan root directory repos
 
 Website profil berada di `/`, aplikasi di `/aplikasi.html`, dan Contact Us di `/#kontak`. Tautan antarhalaman menggunakan jalur relatif. Folder `.vercel/` dan `dist/` diabaikan oleh Git.
 
-Hosting Vercel belum aktif sampai proyek di-deploy melalui akun Vercel. Akun dan catatan lokal pada domain GitHub Pages tidak otomatis terbawa ke domain baru; unduh cadangan pada domain lama terlebih dahulu.
+Hosting Vercel aktif di https://aplikasi-vas.vercel.app/ dan aplikasi tersedia di https://aplikasi-vas.vercel.app/aplikasi.html. Deployment dilakukan langsung melalui Vercel CLI; integrasi deployment otomatis GitHub belum terhubung karena login GitHub pada akun Vercel belum ditautkan. Akun dan catatan lokal pada domain GitHub Pages tidak otomatis terbawa ke domain baru; unduh cadangan pada domain lama terlebih dahulu.
