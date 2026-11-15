@@ -50,9 +50,13 @@ jobs:
           api-level: 30
           arch: x86_64
           working-directory: android
-          script: gradle :app:connectedDebugAndroidTest --no-daemon
+          script: |
+            gradle :app:connectedDebugAndroidTest --no-daemon; result=$?; adb logcat -d -s VASWeb chromium AndroidRuntime > app/build/android-logcat.txt; adb exec-out screencap -p > app/build/android-screen.png; exit $result
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: Android-test-results
-          path: android/app/build/reports/androidTests
+          path: |
+            android/app/build/reports/androidTests
+            android/app/build/android-logcat.txt
+            android/app/build/android-screen.png

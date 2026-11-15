@@ -65,6 +65,10 @@ public class MainActivity extends Activity {
             }
         });
         web.setWebChromeClient(new WebChromeClient() {
+            @Override public boolean onConsoleMessage(android.webkit.ConsoleMessage message) {
+                android.util.Log.d("VASWeb", message.message() + " @ " + message.sourceId() + ":" + message.lineNumber());
+                return true;
+            }
             @Override public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
                 new AlertDialog.Builder(MainActivity.this).setTitle("VAS").setMessage(message)
                     .setPositiveButton("Lanjutkan", (d,w) -> result.confirm())
